@@ -23,10 +23,8 @@
 #define LIBWEBSOCKET_H_3060898B846849FF9F88F5DB59B5950C
 
 #ifdef __cplusplus
-extern "C" {
-#if !defined(__clang__)
 #include <cstddef>
-#endif
+extern "C" {
 #endif
 	
 #ifdef CMAKE_BUILD
@@ -928,6 +926,7 @@ typedef int (extension_callback_function)(struct libwebsocket_context *context,
  * @user:	User provided context data at the protocol level.
  *		Accessible via libwebsockets_get_protocol(wsi)->user
  *		This should not be confused with wsi->user, it is not the same.
+ *		The library completely ignores any value in here.
  * @owning_server:	the server init call fills in this opaque pointer when
  *		registering this protocol with the server.
  * @protocol_index: which protocol we are starting from zero
